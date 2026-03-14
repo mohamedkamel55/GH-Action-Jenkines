@@ -1,0 +1,17 @@
+on: 
+  repository_dispatch: 
+    types: [incident_report]
+
+jobs:
+  handle-incident:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print incident details
+        run: echo "Incident reported"
+#generate Token first from github with 
+#export GITHUB_PAT=token
+# curl -X POST \
+# -H "Authorization: token $GITHUB_PAT" \
+# -H "Accept: application/vnd.github.v3+json" \
+# https://api.github.com/reponame/directory/dispatches \
+# -d '{"event_type": "incident_report"}'
